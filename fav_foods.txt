@@ -1,6 +1,10 @@
 pasta
 chipotle
 sushi
+<<<<<<< HEAD
 ! new edit
 ls
-should be an error fishfling 
+! new edit (step 5 edit on vi)
+ls (step 5 edit on unix with cat >)
+(!! step seven edit on github, merged error)
+should be error fishfling on unix
