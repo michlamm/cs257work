@@ -1,9 +1,6 @@
 pasta
 chipotle
 sushi
-<<<<<<< HEAD
-! new edit
-ls
 ! new edit (step 5 edit on vi)
 ls (step 5 edit on unix with cat >)
 (!! step seven edit on github, merged error)
