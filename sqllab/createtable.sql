@@ -8,5 +8,5 @@ CREATE TABLE earthquakes (
   ms real,
   id text,
   place text,
-  status text,
+  status text
 );
