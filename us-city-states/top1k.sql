@@ -1,4 +1,4 @@
-CREATE TABLE us-cities-top-1k
+CREATE TABLE toponek
 (city text,
 states text, 
 population int, 
