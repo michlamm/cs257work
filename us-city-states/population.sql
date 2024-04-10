@@ -1,5 +1,6 @@
 CREATETABLE us-state-pop
-code text,
+(code text,
 state text,
 pop int
+); 
 
