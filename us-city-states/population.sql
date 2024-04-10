@@ -1,4 +1,4 @@
-CREATETABLE us-state-pop
+CREATETABLE population
 (code text,
 state text,
 pop int
