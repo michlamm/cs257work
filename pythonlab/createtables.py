@@ -30,9 +30,9 @@ def test_query_one():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
 
     cur = conn.cursor()
 
