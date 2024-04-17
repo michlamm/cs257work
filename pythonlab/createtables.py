@@ -11,8 +11,8 @@ def test_connection():
         host="localhost",
         port=5432,   
         database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        user="lamm2",
+        password="corn453smile")
 
     if conn is not None:
         print( "Connection Worked!" )
