@@ -36,9 +36,24 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = "SELECT name, abb FROM states WHERE abb = 'MN' "
-    
-    cur.execute( sql )
+    sql_population = """DROP TABLE IF EXISTS population;
+    CREATE TABLE population
+        (code text,
+        state text,
+        pop int
+        ); 
+    """
+    sql_toponek = """DROP TABLE IF EXISTS top1k;
+    CREATE TABLE toponek
+    (city text,
+    states text, 
+    population int, 
+    lat real,
+    lon real
+    );   
+"""
+    cur.execute( sql_population )
+    cur.execute( toponek )
 
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
