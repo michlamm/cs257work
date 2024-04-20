@@ -53,7 +53,7 @@ def test_query_one():
     );   
 """
     cur.execute( sql_population )
-    cur.execute( toponek )
+    cur.execute( top1k )
 
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
