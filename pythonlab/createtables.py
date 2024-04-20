@@ -10,9 +10,9 @@ def test_connection():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,   
-        database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
 
     if conn is not None:
         print( "Connection Worked!" )
@@ -30,9 +30,9 @@ def test_query_one():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
 
     cur = conn.cursor()
 
@@ -43,7 +43,7 @@ def test_query_one():
         pop int
         ); 
     """
-    sql_toponek = """DROP TABLE IF EXISTS top1k;
+    sql_toponek = """DROP TABLE IF EXISTS toponek;
     CREATE TABLE toponek
     (city text,
     states text, 
@@ -53,7 +53,7 @@ def test_query_one():
     );   
 """
     cur.execute( sql_population )
-    cur.execute( toponek )
+    cur.execute( sql_toponek )
 
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
@@ -77,13 +77,12 @@ def test_query_one():
 def test_query_all():
 
     # You will need to change the Password to use this code
-    
     conn = psycopg2.connect(
         host="localhost",
-        port=5432,
-        database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        port=5432,   
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
 
     cur = conn.cursor()
 
@@ -115,10 +114,10 @@ def test_query_variable():
 
     conn = psycopg2.connect(
         host="localhost",
-        port=5432,
-        database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        port=5432,   
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
 
     cur = conn.cursor()
 
