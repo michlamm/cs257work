@@ -43,8 +43,8 @@ def test_query_one():
         pop int
         ); 
     """
-    sql_toponek = """DROP TABLE IF EXISTS toponek;
-    CREATE TABLE toponek
+    sql_toponek = """DROP TABLE IF EXISTS top1k;
+    CREATE TABLE top1k
     (city text,
     states text, 
     population int, 
