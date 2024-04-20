@@ -77,13 +77,12 @@ def test_query_one():
 def test_query_all():
 
     # You will need to change the Password to use this code
-    
-    conn = psycopg2.connect(
+   conn = psycopg2.connect(
         host="localhost",
-        port=5432,
-        database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        port=5432,   
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
 
     cur = conn.cursor()
 
@@ -113,12 +112,12 @@ def test_query_variable():
     
     # You will need to change the Port and the Password to use this code
 
-    conn = psycopg2.connect(
+  conn = psycopg2.connect(
         host="localhost",
-        port=5432,
-        database="mlepinski",
-        user="mlepinski",
-        password="MyDatabasePassword")
+        port=5432,   
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
 
     cur = conn.cursor()
 
