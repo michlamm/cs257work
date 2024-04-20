@@ -43,8 +43,8 @@ def test_query_one():
         pop int
         ); 
     """
-    sql_toponek = """DROP TABLE IF EXISTS top1k;
-    CREATE TABLE top1k
+    sql_toponek = """DROP TABLE IF EXISTS toponek;
+    CREATE TABLE toponek
     (city text,
     states text, 
     population int, 
@@ -53,7 +53,7 @@ def test_query_one():
     );   
 """
     cur.execute( sql_population )
-    cur.execute( top1k )
+    cur.execute( sql_toponek )
 
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
