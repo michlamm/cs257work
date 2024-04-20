@@ -33,3 +33,8 @@ def Northfield():
     sql = "SELECT city FROM table WHERE city = 'Northfield'"
     
     cur.execute( sql )
+    
+    # fetchone() returns one row that matches your query
+    row = cur.fetchone()
+
+    print( row )
