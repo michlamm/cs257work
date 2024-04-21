@@ -47,8 +47,14 @@ def all():
     cur = conn.cursor()
     largestpop = "SELECT city from toponek where population = (select max(population) from toponek)"
     cur.execute( largestpop )
-    row = cur.fetchone()
-    return (row)
+    row1 = cur.fetchone()
+
+    smallestmn = "select city from toponek where population = (select min(population) from toponek where state='Minnesota') limit 1;"
+    cur.execute( largestpop )
+    row2 = cur.fetchone()
+
+ return (row1, row2)
+
 print( Northfield() )
 print( all())
         
