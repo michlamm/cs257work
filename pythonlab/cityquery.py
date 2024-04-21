@@ -34,7 +34,7 @@ def Northfield(): #Determine if Northfield is present in the database.
     northfield = "SELECT city FROM toponek WHERE city = 'Northfield'"
 
     cur.execute( northfield )
-    if data is None: 
+    if northfield is None: 
         print ("Northfield not available")
     else:
         latitude = "SELECT lat, lon FROM toponek WHERE city='Northfield'"
