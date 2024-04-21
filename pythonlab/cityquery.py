@@ -37,7 +37,7 @@ def Northfield(): #Determine if Northfield is present in the database.
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
     return (row)
-def all():
+def largest():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -48,13 +48,21 @@ def all():
     largestpop = "SELECT city from toponek where population = (select max(population) from toponek)"
     cur.execute( largestpop )
     row1 = cur.fetchone()
-
+    return (row1)
+def mn():
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
+    cur = conn.cursor()
     smallestmn = "select city from toponek where population = (select min(population) from toponek where state='Minnesota') limit 1;"
     cur.execute( largestpop )
     row2 = cur.fetchone()
-
-    return (row1, row2)
+    return (row2)
 
 print( Northfield() )
-print( all())
+print( largest())
+print( mn())
         
