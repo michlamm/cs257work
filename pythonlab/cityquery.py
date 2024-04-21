@@ -20,21 +20,21 @@ def test_connection():
 
 # This function sends an SQL query to the database
 def Northfield():
-
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
         database="lamm2",
         user="lamm2",
         password="corn453smile")
-
     cur = conn.cursor()
 
-    sql = "SELECT city FROM table WHERE city = 'Northfield'"
+   # sql = "SELECT city FROM table WHERE city = 'Northfield'"
+    largestpop = "SELECT city FROM us-cities-top-1k WHERE population=(SELECT MAX(population) FROM us-cities-top-1k)"
 
-    cur.execute( sql )
-    
+    cur.execute( largestpop )
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
 
-    print( row )
+    return (row)
+
+print( Northfield() )
