@@ -58,7 +58,7 @@ def mn():
         password="corn453smile")
     cur = conn.cursor()
     smallestmn = "select city from toponek where population = (select min(population) from toponek where state='Minnesota') limit 1;"
-    cur.execute( largestpop )
+    cur.execute( smallestmn )
     row2 = cur.fetchone()
     return (row2)
 
