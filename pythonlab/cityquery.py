@@ -61,8 +61,20 @@ def mn():
     cur.execute( smallestmn )
     row2 = cur.fetchone()
     return (row2)
-
+def lat():
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="lamm2",
+        user="lamm2",
+        password="corn453smile")
+    cur = conn.cursor()
+    lat = "select city from toponek where lat = (select min(lat) from toponek) AND select city from toponek where lat = (select max(lat) from toponek) AND select city from toponek where lat = (select min(lon) from toponek) AND select city from toponek where lat = (select max(lon) from toponek)"
+    cur.execute( lat )
+    row = cur.fetchone()
+    return (row)
 print( Northfield() )
 print( largest())
 print( mn())
+print( lat())
         
