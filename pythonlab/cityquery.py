@@ -31,5 +31,7 @@ def Northfield():
     cur = conn.cursor()
 
     sql = "SELECT city FROM table WHERE city = 'Northfield'"
-    
+
     cur.execute( sql )
+
+    
