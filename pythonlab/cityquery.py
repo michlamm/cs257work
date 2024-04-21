@@ -69,8 +69,11 @@ def lat():
         user="lamm2",
         password="corn453smile")
     cur = conn.cursor()
-    lat = "select city from toponek where lat = (select min(lat) from toponek) AND select city from toponek where lat = (select max(lat) from toponek) AND select city from toponek where lat = (select min(lon) from toponek) AND select city from toponek where lat = (select max(lon) from toponek)"
-    cur.execute( lat )
+    lon = "select city from toponek where lat = (select min(lat) from toponek)"
+    lon2 = "select city from toponek where lat = (select max(lat) from toponek)" 
+    lat = "select city from toponek where lat = (select min(lon) from toponek)"
+    lat2 = "select city from toponek where lat = (select max(lon) from toponek)"
+    cur.execute( lat, lat2, lon, lon2 )
     row = cur.fetchone()
     return (row)
 print( Northfield() )
