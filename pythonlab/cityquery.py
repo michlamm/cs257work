@@ -31,13 +31,13 @@ def Northfield(): #Determine if Northfield is present in the database.
     cur = conn.cursor()
 
    # sql = "SELECT city FROM table WHERE city = 'Northfield'"
-    northfield = "SELECT city FROM us-cities-top-1k WHERE city='Northfield'"
+    northfield = "SELECT city FROM us-cities-top-1k WHERE city='Northfield';"
 
     cur.execute( northfield )
     if data is None: 
         print ("Northfield not available")
     else:
-        latitude = "SELECT lat, lon FROM us-cities-top-1k WHERE city='Northfield'"
+        latitude = "SELECT lat, lon FROM us-cities-top-1k WHERE city='Northfield';"
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
     return (row)
