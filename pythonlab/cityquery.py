@@ -19,7 +19,9 @@ def test_connection():
 
 
 # This function sends an SQL query to the database
-def Northfield():
+def Northfield(): #Determine if Northfield is present in the database. 
+                #If it is, print its location (Latitude and Longitude). 
+                #If it is not, print an appropriate message for the user.
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -29,12 +31,15 @@ def Northfield():
     cur = conn.cursor()
 
    # sql = "SELECT city FROM table WHERE city = 'Northfield'"
-    largestpop = "SELECT city FROM us-cities-top-1k WHERE population=(SELECT MAX(population) FROM us-cities-top-1k)"
+    northfield = "SELECT city FROM us-cities-top-1k WHERE city='Northfield'"
 
-    cur.execute( largestpop )
+    cur.execute( northfield )
+    if data is None: 
+        print ("Northfield not available")
+    else:
+        latitude = "SELECT lat, lon FROM us-cities-top-1k WHERE city='Northfield'"
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
-
     return (row)
 
 print( Northfield() )
