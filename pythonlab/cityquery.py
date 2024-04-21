@@ -31,7 +31,7 @@ def Northfield(): #Determine if Northfield is present in the database.
     cur = conn.cursor()
 
    # sql = "SELECT city FROM table WHERE city = 'Northfield'"
-    northfield = "SELECT city FROM toponek WHERE city='Northfield'"
+    northfield = "SELECT city FROM toponek WHERE city = 'Northfield'"
 
     cur.execute( northfield )
     if data is None: 
