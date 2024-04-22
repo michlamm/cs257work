@@ -33,7 +33,7 @@ def Northfield(): #Determine if Northfield is present in the database.
     row = cur.fetchone()
     
     if row is None: 
-        print ("Northfield not available")
+        return "Northfield not available"
       
     else:
         latitude = "SELECT lat, lon FROM toponek WHERE city='Northfield'"
@@ -74,8 +74,8 @@ def lat():
         user="lamm2",
         password="corn453smile")
     cur = conn.cursor()
-    lon = "select city from toponek where lat = (select min(lat) from toponek)"
-    lon2 = "select city from toponek where lat = (select max(lat) from toponek)" 
+    lon = "select city from toponek where lat = (select min(lat) from toponek) limit 1"
+    lon2 = "select city from toponek where lat = (select max(lat) from toponek) limit 1" 
     lat = "select city from toponek where lat = (select min(lon) from toponek)"
     lat2 = "select city from toponek where lat = (select max(lon) from toponek)"
     cur.execute( lat )
