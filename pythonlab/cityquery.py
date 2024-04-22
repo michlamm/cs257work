@@ -105,8 +105,8 @@ def sum():
             cur.execute(sql, [state])
             row = cur.fetchone()
             return row
-    else:  sumcode ="select sum(population) from population where code = %s"
-        if sumcode = None:
+    else:  sumcode = "select sum(population) from population where code = %s"
+        if sumcode= None:
              return "Try a different abbreviation or check spelling." 
         else:
             cur.execute(sql, [state])
