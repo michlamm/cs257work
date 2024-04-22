@@ -32,10 +32,11 @@ def Northfield(): #Determine if Northfield is present in the database.
     cur.execute( northfield )
     if northfield is None: 
         print ("Northfield not available")
-        row = cur.fetchone()
-        return (row)
+      
     else:
         latitude = "SELECT lat, lon FROM toponek WHERE city='Northfield'"
+        row = cur.fetchone()
+        return (row)
     
     
 def largest():
