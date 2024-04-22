@@ -32,11 +32,12 @@ def Northfield(): #Determine if Northfield is present in the database.
     cur.execute( northfield )
     if northfield is None: 
         print ("Northfield not available")
+        row = cur.fetchone()
+        return (row)
     else:
         latitude = "SELECT lat, lon FROM toponek WHERE city='Northfield'"
-    # fetchone() returns one row that matches your query
-    row = cur.fetchone()
-    return (row)
+    
+    
 def largest():
     conn = psycopg2.connect(
         host="localhost",
@@ -73,8 +74,10 @@ def lat():
     lon2 = "select city from toponek where lat = (select max(lat) from toponek)" 
     lat = "select city from toponek where lat = (select min(lon) from toponek)"
     lat2 = "select city from toponek where lat = (select max(lon) from toponek)"
-    cur.execute( lat, lat2)
-    cur.execute (lon, lon2 )
+    cur.execute( lat )
+    cur.execute( lat2)
+    cur.execute (lon )
+    cur.execute( lon2)
     row = cur.fetchall()
     return (row)
 print( Northfield() )
