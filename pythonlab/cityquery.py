@@ -88,8 +88,33 @@ def lat():
     lon2 = cur.fetchone()
     
     return lat2, lon2, lat, lon
+def sum():
+    conn = psycopg2.connect(
+            host="localhost",
+            port=5432,   
+            database="lamm2",
+            user="lamm2",
+            password="corn453smile")
+    cur = conn.cursor()
+    state = input("Enter state: ")
+    if state = None:
+        sum="select sum(population) from population where state = %s"
+        if sum = None:
+             return "Try a different state or check spelling." 
+        else:
+            cur.execute(sql, [state])
+            row = cur.fetchone()
+            return row
+    else:  sumcode ="select sum(population) from population where code = %s"
+        if sumcode = None:
+             return "Try a different abbreviation or check spelling." 
+        else:
+            cur.execute(sql, [state])
+            row = cur.fetchone()
+            return row
 print( Northfield() )
 print( largest())
 print( mn())
 print( lat())
+print( sum())
         
