@@ -30,13 +30,16 @@ def Northfield(): #Determine if Northfield is present in the database.
    # sql = "SELECT city FROM table WHERE city = 'Northfield'"
     northfield = "SELECT city FROM toponek WHERE city = 'Northfield'"
     cur.execute( northfield )
-    if northfield is None: 
+    row = cur.fetchone()
+    
+    if row is None: 
         print ("Northfield not available")
       
     else:
         latitude = "SELECT lat, lon FROM toponek WHERE city='Northfield'"
-        row = cur.fetchone()
-        return (row)
+        cur.execute( latitude )
+        row1 = cur.fetchone()
+        return (row1)
     
     
 def largest():
@@ -76,14 +79,14 @@ def lat():
     lat = "select city from toponek where lat = (select min(lon) from toponek)"
     lat2 = "select city from toponek where lat = (select max(lon) from toponek)"
     cur.execute( lat )
+    lat = cur.fetchone()
     cur.execute( lat2)
+    lat2 = cur.fetchone()
     cur.execute (lon )
+    lon = cur.fetchone()
     cur.execute( lon2)
-    row_list = cur.fetchall()
-
-    for row in row_list:
-        print(row)
-    return 
+    lon2 = cur.fetchone()
+    return lat, lat2, lon, lon2 
 print( Northfield() )
 print( largest())
 print( mn())
