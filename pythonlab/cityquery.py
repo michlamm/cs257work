@@ -79,8 +79,11 @@ def lat():
     cur.execute( lat2)
     cur.execute (lon )
     cur.execute( lon2)
-    row = cur.fetchall()
-    return (row)
+    row_list = cur.fetchall()
+
+    for row in row_list:
+        print(row)
+    return 
 print( Northfield() )
 print( largest())
 print( mn())
