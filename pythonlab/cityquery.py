@@ -74,10 +74,10 @@ def lat():
         user="lamm2",
         password="corn453smile")
     cur = conn.cursor()
-    lon = "select city from toponek where lat = (select min(lat) from toponek) limit 1"
-    lon2 = "select city from toponek where lat = (select max(lat) from toponek) limit 1" 
-    lat = "select city from toponek where lon = (select min(lon) from toponek)"
-    lat2 = "select city from toponek where lon = (select max(lon) from toponek)"
+    lat = "select city from toponek where lat = (select min(lat) from toponek) limit 1"
+    lat2 = "select city from toponek where lat = (select max(lat) from toponek) limit 1" 
+    lon = "select city from toponek where lon = (select min(lon) from toponek)"
+    lon2 = "select city from toponek where lon = (select max(lon) from toponek)"
     cur.execute( lat )
     lat = cur.fetchone()
     cur.execute( lat2)
@@ -86,7 +86,8 @@ def lat():
     lon = cur.fetchone()
     cur.execute( lon2)
     lon2 = cur.fetchone()
-    return (print("South" + lat)), lat2, lon, lon2 
+    output = "South: " + lat + "North: " +lat2 + "West: " + lon + "East: " + lon2 
+    return output
 print( Northfield() )
 print( largest())
 print( mn())
