@@ -86,7 +86,7 @@ def lat():
     lon = cur.fetchone()
     cur.execute( lon2)
     lon2 = cur.fetchone()
-    return (print("South") +lat), lat2, lon, lon2 
+    return (print("South" + lat)), lat2, lon, lon2 
 print( Northfield() )
 print( largest())
 print( mn())
