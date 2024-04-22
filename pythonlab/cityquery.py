@@ -99,19 +99,20 @@ def sum():
     state = input("Enter state: ")
     if len(state)>2:
         sum = "select sum(population) from population where state = %s"
-        if sum = None:
+        cur.execute(sum, [state])
+        row = cur.fetchone()
+        if row = None:
              return "Try a different state or check spelling." 
         else:
-            cur.execute(sql, [state])
-            row = cur.fetchone()
             return row
-    else:  sumcode = "select sum(population) from population where code = %s"
+    else:  
+        sumcode = "select sum(population) from population where code = %s"
+        cur.execute(sumcode, [state])
+        row1 = cur.fetchone()
         if sumcode= None:
              return "Try a different abbreviation or check spelling." 
         else:
-            cur.execute(sql, [state])
-            row = cur.fetchone()
-            return row
+            return row1
 print( Northfield() )
 print( largest())
 print( mn())
