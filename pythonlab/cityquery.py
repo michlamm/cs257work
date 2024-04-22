@@ -74,7 +74,7 @@ def lat():
     lat = "select city from toponek where lat = (select min(lon) from toponek)"
     lat2 = "select city from toponek where lat = (select max(lon) from toponek)"
     cur.execute( lat, lat2)
-    cur.exectue (lon, lon2 )
+    cur.execute (lon, lon2 )
     row = cur.fetchall()
     return (row)
 print( Northfield() )
