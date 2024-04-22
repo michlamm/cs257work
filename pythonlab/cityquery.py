@@ -97,8 +97,8 @@ def sum():
             password="corn453smile")
     cur = conn.cursor()
     state = input("Enter state: ")
-    if state = 0:
-        sum="select sum(population) from population where state = %s"
+    if len(state)>2:
+        sum = "select sum(population) from population where state = %s"
         if sum = None:
              return "Try a different state or check spelling." 
         else:
