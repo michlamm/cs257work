@@ -96,7 +96,7 @@ def sum():
             user="lamm2",
             password="corn453smile")
     cur = conn.cursor()
-    state = input("Enter state: ")
+    state = input("Enter state: ")
     if state = None:
         sum="select sum(population) from population where state = %s"
         if sum = None:
