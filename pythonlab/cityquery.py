@@ -76,8 +76,8 @@ def lat():
     cur = conn.cursor()
     lon = "select city from toponek where lat = (select min(lat) from toponek) limit 1"
     lon2 = "select city from toponek where lat = (select max(lat) from toponek) limit 1" 
-    lat = "select city from toponek where lat = (select min(lon) from toponek)"
-    lat2 = "select city from toponek where lat = (select max(lon) from toponek)"
+    lat = "select city from toponek where lon = (select min(lon) from toponek)"
+    lat2 = "select city from toponek where lon = (select max(lon) from toponek)"
     cur.execute( lat )
     lat = cur.fetchone()
     cur.execute( lat2)
