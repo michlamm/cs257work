@@ -33,8 +33,8 @@ def abbrev():
     cur = conn.cursor()
 
     pop = "select population from population where code = %s"
-        cur.execute(pop)
-        row1 = cur.fetchone()
+    cur.execute(pop)
+    row1 = cur.fetchone()
     
     return row1
 
