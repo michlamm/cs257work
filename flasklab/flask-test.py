@@ -22,7 +22,7 @@ def add(num1, num2):
     return str(answer)
 
 @app.route('/pop/<abbrev>')
-def abbrev():
+def pop(abbrev):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -30,9 +30,9 @@ def abbrev():
         user="lamm2",
         password="corn453smile")
 
-    cur = conn.cursor()
+    cur = conn.curso    r()
 
-    pop = "select population from population where code = %s"
+    pop = "select population from population where code = '"+ abbrev +"';"
     cur.execute(pop)
     row1 = cur.fetchone()
     
