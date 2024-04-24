@@ -30,7 +30,7 @@ def pop(abbrev):
         user="lamm2",
         password="corn453smile")
 
-    cur = conn.curso    r()
+    cur = conn.cursor()
 
     pop = "select population from population where code = '"+ abbrev +"';"
     cur.execute(pop)
