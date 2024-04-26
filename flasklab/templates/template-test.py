@@ -1,5 +1,5 @@
-import Flask
-import render_template
+import flask from Flask
+import flask from render_template
 import random
 
 app = Flask(__name__)
