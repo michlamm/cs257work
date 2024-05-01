@@ -18,6 +18,10 @@ def rand(low, high):
     num = random.randint(low_int, high_int)
     return render_template("random.html", randNum = num)
 
+@app.route('/spotify')
+def spotify():
+    return render_template("spotify")
+
 if __name__ == '__main__':
     my_port = 5105
     app.run(host='0.0.0.0', port = my_port) 
