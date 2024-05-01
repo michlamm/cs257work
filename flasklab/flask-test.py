@@ -32,7 +32,7 @@ def pop(abbrev):
 
     cur = conn.cursor()
 
-    pop = "select state from population where code = '"+ abbrev +"';"
+    pop = "select population from population where code = '"+ abbrev +"';"
     cur.execute(pop)
     row1 = cur.fetchone()
     
