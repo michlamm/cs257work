@@ -18,6 +18,7 @@ the_paragraph.onmouseenter = function() {
 };
 
 function changeSpotify() {
+  the_heading = document.getElementById("hello");
   text_input_element = document.getElementById("user-color");
   new_color = text_input_element.value;
 	the_heading.style.color = new_color;
