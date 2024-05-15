@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-	return render_template(“spotify.html”)
+	return render_template("spotify.html")
 
 if __name__ == '__main__':
     my_port = 5105
