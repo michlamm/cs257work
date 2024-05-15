@@ -1,8 +1,7 @@
-<head>
+
   <link rel="stylesheet" href="/static/spotify.css">
 
   <script src="/static/spotify.js"></script>
-</head>
 
 <h1 class="my-class" id="hello" onclick="functionname()">Hello World!</h1>
 <p>Color: <input id="user-color" type="text" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button onclick="changeSpotify()">change color </button></p>
@@ -15,4 +14,3 @@
     <p><a href="https://open.spotify.com/playlist/37i9dQZF1DX0D996ZXujBy?si=0feb1ad5608b4ebb">Taylor Swift</a></p>
   </div>
 </div>
-
